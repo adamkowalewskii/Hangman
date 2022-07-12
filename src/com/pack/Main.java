@@ -12,9 +12,10 @@ public class Main extends Menu{
         Menu menu = new Menu();
         //menu.start();
 
-        LoadFromFile tmp = new LoadFromFile();
+        //LoadFromFile tmp = new LoadFromFile();
 
-        ArrayList<Password> arr = tmp.getPasswords();
-        
+        //ArrayList<Password> arr = tmp.getPasswords();
+
+
     }
 }

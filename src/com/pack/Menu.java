@@ -20,7 +20,10 @@ public class Menu {
     }
 
     private void logic() throws IOException {
-        if(choice == 2) {
+        if(choice == 1){
+            Game game = new Game();
+        }
+        else if(choice == 2) {
             AddPassword addPass = new AddPassword();
         }
     }
