@@ -9,7 +9,7 @@ public class Main extends Menu{
         //menu.start();
 
         LoadFromFile tmp = new LoadFromFile();
-        System.out.println(tmp.getTextOfFile());
+
 
 
 

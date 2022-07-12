@@ -15,6 +15,7 @@ public class LoadFromFile {
     private String textOfFile = new String(Files.readAllBytes(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt")));
 
     public LoadFromFile() throws IOException {
+        fromTextToArrays();
     }
 
     public String getTextOfFile(){
@@ -25,7 +26,7 @@ public class LoadFromFile {
         String []arr = this.textOfFile.split("\n");
         String[][] both = new String[arr.length][2];
         for(int i = 0; i < arr.length; i++) {
-            both[i] = arr[i].split(" ");
+            both[i] = arr[i].split("-");
 
         }
 
@@ -37,7 +38,7 @@ public class LoadFromFile {
         }
 
         public ArrayList<String> getPasswords(){
-            return passwords;
+            return this.passwords;
         }
 
         public ArrayList<String> getAttemps(){
