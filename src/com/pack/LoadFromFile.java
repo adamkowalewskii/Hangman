@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LoadFromFile {
-    private ArrayList<String> passwords = new ArrayList<String>();
-    private ArrayList<String> attemps = new ArrayList<String>();
+    private ArrayList<Password> passwords = new ArrayList<Password>();
+
 
 
     private String textOfFile = new String(Files.readAllBytes(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt")));
@@ -31,18 +31,15 @@ public class LoadFromFile {
         }
 
         for(int i = 0; i< both.length; i++){
-            passwords.add(both[i][0]);
-            attemps.add(both[i][1]);
+            passwords.add( new Password(both[i][0], Integer.valueOf(both[i][1])));
+            //attemps.add(both[i][1]);
         }
 
         }
 
-        public ArrayList<String> getPasswords(){
+        public ArrayList<Password> getPasswords(){
             return this.passwords;
         }
 
-        public ArrayList<String> getAttemps(){
-            return attemps;
-        }
 
     }

@@ -1,6 +1,7 @@
 package com.pack;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Menu{
     Main() throws IOException {
@@ -13,8 +14,7 @@ public class Main extends Menu{
 
         LoadFromFile tmp = new LoadFromFile();
 
-
-
-
+        ArrayList<Password> arr = tmp.getPasswords();
+        
     }
 }

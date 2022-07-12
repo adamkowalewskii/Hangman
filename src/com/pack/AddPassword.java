@@ -22,7 +22,7 @@ public class AddPassword {
         System.out.println("Podaj liczbę prób jaką użytkownik ma na zgadnięcie tego hasła: ");
         attemps = scanner.nextInt();
 
-        String myNew = "\n"+password+"-"+ attemps;
+        String myNew = "\n"+password+"-"+ attemps + "-";
         String textOfFile = new String(Files.readAllBytes(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt")));
         Files.write(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt"), myNew.getBytes(), StandardOpenOption.APPEND);
     }
