@@ -28,6 +28,8 @@ public class Game {
         Password gamePassword = getRandomPassword();
         String value = gamePassword.getValue();
         Integer attemps = gamePassword.getAttempts();
+        Integer drawAttemps = attemps;
+        Integer misses = 0;
 
         String hiddenPassword = "";
         for(int i = 0; i < value.length(); i++){
@@ -42,16 +44,18 @@ public class Game {
         //System.out.println(value + "\n" + hiddenPassword);
 
         while(true){
+            System.out.println("\n==================\n");
+            Draw draw = new Draw(misses, drawAttemps);
+            System.out.println("Liczba prób: " + attemps);
+            System.out.println(hiddenPassword);
             if(attemps == 0){
-                System.out.println("Niestety przegrałeś ;(");
+                System.out.println("Niestety przegrałeś ;( - Hasło to: " + value);
                 break;
             }
             else if(workingOnHiddenPassword(hiddenPassword).equals(value)){
                 System.out.println("Gratulacje, Wygrałeś :)");
                 break;
             }
-
-            System.out.println(hiddenPassword);
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("Spróbuj zgadnąć literę: ");
@@ -72,8 +76,10 @@ public class Game {
             if(!flag){
                 System.out.println("Pudło");
                 attemps--;
-            }
+                misses++;
 
+            }
+            flag = false;
         }
     }
 
