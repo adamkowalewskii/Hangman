@@ -22,8 +22,20 @@ public class AddPassword {
         System.out.println("Podaj liczbę prób jaką użytkownik ma na zgadnięcie tego hasła(max liczba to 11 inaczej było by za łatwo ;): ");
         attemps = scanner.nextInt();
 
-        if(attemps > 11){
-            System.out.println("Podana liczba jest większ niż 11, spróbuj ponownie");
+        boolean flag = true;
+        for(int i = 0; i < password.length(); i++){
+            if(password.charAt(i) >= '0' && password.charAt(i) <= '9'){
+                flag = false;
+            }
+        }
+
+        if(!flag){
+            System.out.println("Podane hasło zawiera cyfrę. Podaj nowe hasło bez cyfry!");
+            AddPassword addPassword = new AddPassword();
+        }
+
+        else if(attemps > 11){
+            System.out.println("Podana liczba jest większ niż 11, spróbuj ponownie!");
             AddPassword addPassword = new AddPassword();
 
         } else{
