@@ -9,5 +9,8 @@ public class Main extends Menu{
 
     public static void main(String[] args) throws IOException {
         Menu menu = new Menu();
+        while(true) {
+            Menu AgainMenu = new Menu(false);
+        }
     }
 }
