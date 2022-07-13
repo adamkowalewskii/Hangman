@@ -3,6 +3,7 @@ package com.pack;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Game {
 
@@ -45,8 +46,32 @@ public class Game {
                 System.out.println("Niestety przegrałeś ;(");
                 break;
             }
-            else if(workingOnHiddenPassword(hiddenPassword) == value){
+            else if(workingOnHiddenPassword(hiddenPassword).equals(value)){
                 System.out.println("Gratulacje, Wygrałeś :)");
+                break;
+            }
+
+            System.out.println(hiddenPassword);
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Spróbuj zgadnąć literę: ");
+            char letter = scanner.next().charAt(0);
+
+            boolean flag = false;
+            for(int i = 0; i < value.length(); i++){
+                if(value.charAt(i) == letter){
+                    //System.out.println("Trafiłeś");
+                    flag = true;
+                    hiddenPassword = workingOnHiddenPassword(hiddenPassword);
+                    char hiddenPasswordChars[] = hiddenPassword.toCharArray();
+                    hiddenPasswordChars[i] = letter;
+                    hiddenPassword = String.valueOf(hiddenPasswordChars);
+
+                }
+            }
+            if(!flag){
+                System.out.println("Pudło");
+                attemps--;
             }
 
         }
