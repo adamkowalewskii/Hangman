@@ -10,8 +10,6 @@ import java.util.Arrays;
 public class LoadFromFile {
     private ArrayList<Password> passwords = new ArrayList<Password>();
 
-
-
     private String textOfFile = new String(Files.readAllBytes(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt")));
 
     public LoadFromFile() throws IOException {
@@ -32,7 +30,7 @@ public class LoadFromFile {
 
         for(int i = 0; i< both.length; i++){
             passwords.add( new Password(both[i][0], Integer.valueOf(both[i][1])));
-            //attemps.add(both[i][1]);
+
         }
 
         }

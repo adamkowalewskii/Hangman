@@ -24,7 +24,7 @@ public class Game {
         return passwords.get(idx);
     }
 
-    private void playingGame(){
+    private void playingGame() throws IOException {
         Password gamePassword = getRandomPassword();
         String value = gamePassword.getValue();
         Integer attemps = gamePassword.getAttempts();
@@ -74,10 +74,13 @@ public class Game {
                 }
             }
             if(!flag){
-                System.out.println("Pudło");
+                System.out.println("Pudło!");
                 attemps--;
                 misses++;
 
+            }
+            else{
+                System.out.println("Trafiłeś!");
             }
             flag = false;
         }

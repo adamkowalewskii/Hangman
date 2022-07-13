@@ -26,6 +26,10 @@ public class Menu {
         else if(choice == 2) {
             AddPassword addPass = new AddPassword();
         }
+        else{
+            System.out.println("Nie poprawny input, spróbuj pownownie");
+            Main main = new Main();
+        }
     }
 
     protected Integer getChoice(){
