@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class AddPassword {
@@ -19,6 +20,7 @@ public class AddPassword {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj hasło, które ma zostać dodane: ");
         password = scanner.nextLine();
+        password = password.toLowerCase();
         System.out.println("Podaj liczbę prób jaką użytkownik ma na zgadnięcie tego hasła(max liczba to 11 inaczej było by za łatwo ;): ");
         attemps = scanner.nextInt();
 
@@ -39,7 +41,7 @@ public class AddPassword {
             AddPassword addPassword = new AddPassword();
 
         } else{
-            String myNew = "\n"+password+"-"+ attemps + "-";
+            String myNew = "\n"+password+"-"+ attemps;
             String textOfFile = new String(Files.readAllBytes(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt")));
             Files.write(Paths.get("C:\\Users\\akowalewski\\IdeaProjects\\Hangman\\src\\com\\pack\\passwords.txt"), myNew.getBytes(), StandardOpenOption.APPEND);
         }
