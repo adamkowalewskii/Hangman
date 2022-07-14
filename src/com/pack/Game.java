@@ -42,7 +42,6 @@ public class Game {
             }
 
         }
-        //System.out.println(value + "\n" + hiddenPassword);
 
         while(true){
             System.out.println("\n==================\n");
@@ -73,13 +72,13 @@ public class Game {
                         flag = true;
                         hiddenPassword = workingOnHiddenPassword(hiddenPassword);
 
-                        for (int j = 0; j < value.length(); j++) {
-                            if (value.charAt(j) == ' ') {
-                                char hiddenPasswordChars2[] = hiddenPassword.toCharArray();
-                                hiddenPasswordChars2[j] = '\t';
-                                hiddenPassword = String.valueOf(hiddenPasswordChars2);
-                            }
-                        }
+//                        for (int j = 0; j < value.length(); j++) {
+//                            if (value.charAt(j) == ' ') {
+//                                char hiddenPasswordChars2[] = hiddenPassword.toCharArray();
+//                                hiddenPasswordChars2[j] = '\t';
+//                                hiddenPassword = String.valueOf(hiddenPasswordChars2);
+//                            }
+//                        }
 
                         char hiddenPasswordChars[] = hiddenPassword.toCharArray();
                         hiddenPasswordChars[i] = letter;

@@ -1,6 +1,7 @@
 package com.pack;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -19,8 +20,13 @@ public class Menu {
     private void start(){
         System.out.println("1.Graj\n2.Dodaj Hasło do listy");
         System.out.print("Twój wybór: ");
-        Scanner scanner = new Scanner(System.in);
-        this.choice = scanner.nextInt();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            this.choice = scanner.nextInt();
+        }catch(InputMismatchException e){
+            System.out.println("Musisz podać cyfrę - 1 lub 2");
+            System.exit(0);
+        }
 
     }
 
@@ -41,8 +47,13 @@ public class Menu {
     private void again() throws IOException {
         System.out.println("\n1.Zagraj ponownie\n2.Dodaj Hasło do listy\n3.Zakończ rozgrywkę");
         System.out.print("Twój wybór: ");
-        Scanner scanner = new Scanner(System.in);
-        this.choice = scanner.nextInt();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            this.choice = scanner.nextInt();
+        }catch(InputMismatchException e){
+            System.out.println("Musisz podać cyfrę - 1, 2 lub 3");
+            System.exit(0);
+        }
         if(choice == 1){
             Game game = new Game();
         }

@@ -26,13 +26,17 @@ public class AddPassword {
 
         boolean flag = true;
         for(int i = 0; i < password.length(); i++){
-            if(password.charAt(i) >= '0' && password.charAt(i) <= '9'){
-                flag = false;
+            if(Character.isLetter(password.charAt(i)) == false){
+                if(password.charAt(i) == ' '){
+                }
+                else {
+                    flag = false;
+                }
             }
         }
 
         if(!flag){
-            System.out.println("Podane hasło zawiera cyfrę. Podaj nowe hasło bez cyfry!");
+            System.out.println("Podane hasło zawiera cyfrę lub inny znak nie będący literą. Podaj nowe poprawne hasło!");
             AddPassword addPassword = new AddPassword();
         }
 
